@@ -30,7 +30,7 @@ const FileUpload = () => {
     formData.append('file', file);
 
     try {
-      const response = await axios.post('http://localhost:5000/upload', formData, {
+      const response = await axios.post('https://multer-file-cloudinary-backend.vercel.app/upload', formData, {
         headers: {
           'Content-Type': 'multipart/form-data'
         }
@@ -52,7 +52,7 @@ const FileUpload = () => {
     setError(null); // Clear previous errors
 
     try {
-      const response = await axios.get('http://localhost:5000/images');
+      const response = await axios.get('https://multer-file-cloudinary-backend.vercel.app/images');
       setImages(response.data);
     } catch (error) {
       setError('Error fetching images. Please try again.');
